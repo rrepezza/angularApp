@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostsListComponent } from './posts-list/posts-list.component';
-import { PostsFormComponent } from './posts-form/posts-form.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { PostAddComponent } from './posts-add/post-add.component'
 
 @NgModule({
-  declarations: [PostsListComponent, PostsFormComponent],
+  declarations: [PostsListComponent, PostAddComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    HttpClientModule
+  ],
+  exports: [PostAddComponent, PostsListComponent]
 })
 export class PostsModule { }
